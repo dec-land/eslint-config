@@ -1,6 +1,7 @@
 {
   "name": "@dec-land/eslint-config-ts-extended",
   "version": "1.0.1",
+  "private": false,
   "description": "Eslint config for typescript that extends the reccomended + extra rules",
   "author": "Declan Fitzpatrick",
   "homepage": "https://github.com/dec-land/eslint-config",
