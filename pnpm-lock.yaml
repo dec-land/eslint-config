@@ -13,9 +13,6 @@ importers:
       '@commitlint/cz-commitlint':
         specifier: ^17.4.4
         version: registry.npmjs.org/@commitlint/cz-commitlint@17.5.0(commitizen@4.3.0)(inquirer@8.2.5)
-      '@hubootech/eslint-config-ts':
-        specifier: workspace:*
-        version: link:packages/eslint-config-ts
       '@semantic-release/changelog':
         specifier: ^6.0.2
         version: registry.npmjs.org/@semantic-release/changelog@6.0.3(semantic-release@19.0.5)
@@ -88,9 +85,9 @@ importers:
         specifier: ^8.40.0
         version: registry.npmjs.org/eslint@8.40.0
 
-  packages/eslint-config-ts-extra:
+  packages/eslint-config-ts-extended:
     dependencies:
-      '@hubootech/eslint-config-ts':
+      '@dec-land/eslint-config-ts':
         specifier: workspace:*
         version: link:../eslint-config-ts
     devDependencies:
