@@ -1,0 +1,100 @@
+{
+  "name": "@dec-land/eslint-config-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Monorepo with pnpm workspaces for eslint configs",
+  "author": "Declan Fitzpatrick",
+  "packageManager": "pnpm@8.3.0",
+  "homepage": "https://github.com/dec-land/eslint-config",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "directory": "https://github.com/dec-land/eslint-config.git"
+  },
+  "scripts": {
+    "lint": "pnpm -r run lint",
+    "format": "prettier --config .prettierrc --ignore-path .prettierignore --write  \"**/*.{js,ts}\"",
+    "release": "bumpp -r && pnpm -r publish",
+    "commit": "cz"
+  },
+  "keywords": [
+    "eslint-config"
+  ],
+  "devDependencies": {
+    "bumpp": "^9.1.0",
+    "eslint": "^8.40.0",
+    "prettier": "2.7.1"
+  },
+  "commitlint": {
+    "extends": [
+      "./node_modules/@commitlint/config-conventional"
+    ],
+    "rules": {
+      "header-max-length": [
+        0
+      ],
+      "body-max-line-length": [
+        0
+      ]
+    }
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "conventionalcommits"
+        }
+      ],
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "docs/CHANGELOG.md"
+        }
+      ],
+      "@semantic-release/npm",
+      [
+        "@semantic-release/github",
+        {
+          "assets": [
+            "docs/CHANGELOG.md",
+            "package.json"
+          ]
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "docs/CHANGELOG.md",
+            "package.json"
+          ]
+        }
+      ]
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@commitlint/cz-commitlint": "^17.4.4",
+    "@semantic-release/changelog": "^6.0.2",
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^8.0.7",
+    "@semantic-release/release-notes-generator": "^10.0.3",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "3.3.0",
+    "multi-semantic-release": "^3.0.2",
+    "semantic-release": "^19.0.5"
+  }
+}

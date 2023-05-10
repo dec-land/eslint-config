@@ -1,0 +1,26 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+jobs:
+
+  - job: NpmDeploy
+    displayName: Deploy npm package
+    steps:
+      - task: npmAuthenticate@0
+        inputs:
+          workingFile: '.npmrc'
+        displayName: Inject npm credentials
+
+      - bash: |
+          npm install -g pnpm@8.4.0
+          pnpm install --production --ignore-scripts
+
+          npx multi-semantic-release
+        displayName: Deploy package
+        env:
+          GH_TOKEN: $(GH_TOKEN)
+          # Not actually used but required to make the package not cry
+          NPM_TOKEN: not_used

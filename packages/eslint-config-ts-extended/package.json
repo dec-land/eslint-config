@@ -1,0 +1,26 @@
+{
+  "name": "@dec-land/eslint-config-ts-extended",
+  "version": "1.0.0",
+  "description": "Eslint config for typescript that extends the reccomended + extra rules",
+  "author": "Declan Fitzpatrick",
+  "homepage": "https://github.com/dec-land/eslint-config",
+  "keywords": [
+    "eslint-config"
+  ],
+  "main": "index.js",
+  "files": [
+    "*.js"
+  ],
+  "peerDependencies": {
+    "eslint": ">=7.4.0"
+  },
+  "scripts": {
+    "lint": "eslint . --config=index.js --fix"
+  },
+  "dependencies": {
+    "@dec-land/eslint-config-ts": "workspace:*"
+  },
+  "devDependencies": {
+    "eslint": "^8.40.0"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "@dec-land/eslint-config-ts",
+  "version": "1.0.1",
+  "description": "Reccomended eslint config for typescript",
+  "author": "Declan Fitzpatrick",
+  "homepage": "https://github.com/dec-land/eslint-config",
+  "keywords": [
+    "eslint-config"
+  ],
+  "main": "index.js",
+  "files": [
+    "*.js"
+  ],
+  "peerDependencies": {
+    "eslint": ">=7.4.0"
+  },
+  "scripts": {
+    "lint": "eslint . --config=index.js --fix"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.54.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^27.2.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-unused-imports": "^2.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.40.0"
+  }
+}
