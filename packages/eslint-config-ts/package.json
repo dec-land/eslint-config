@@ -1,6 +1,6 @@
 {
   "name": "@dec-land/eslint-config-ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Reccomended eslint config for typescript",
   "author": "Declan Fitzpatrick",
   "homepage": "https://github.com/dec-land/eslint-config",
